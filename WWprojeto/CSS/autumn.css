@@ -39,16 +39,14 @@ header nav ul {
   gap: 36px;
 }
 
-header nav ul li a {
-  font-size: 14px;
-  color: #5c5a54;
-  display: inline-block;
-  transform: scale(1);
-  transition: transform 0.3s ease-in-out;
-}
-
 header nav ul li a:hover {
   transform: scale(1.05);
+}
+
+header nav ul li a {
+  transition: transform 0.3s ease-in-out;
+  font-size: 14px;
+  color: #5c5a54;
 }
 
 header .icones {
@@ -62,37 +60,239 @@ header .icones {
   height: 24px;
   cursor: pointer;
 }
-
-nav {
-  display: flex;
-  gap: 50px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #111;
-  font-size: 1rem;
+.hero {
   position: relative;
-}
-
-nav a::after {
-  content: "";
-  width: 0%;
-  height: 1px;
-  background: #111;
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  transition: 0.3s;
-}
-
-nav a:hover::after,
-nav .active::after {
-  width: 100%;
-}
-
-.icons {
+  height: 100vh;
+  background-image: url("../assets/outono.jpg");
+  background-size: cover;
+  background-position: center;
   display: flex;
-  gap: 20px;
-  font-size: 1.4rem;
+  align-items: flex-end;
+  padding: 80px;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-content span {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.hero-content h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 600;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  opacity: 0.85;
+  max-width: 360px;
+  line-height: 1.7;
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+}
+
+.story-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+  background-color: #f2f0eb;
+}
+
+.story-text span {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: #9c9a94;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.story-text h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.story-text p {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #5c5a54;
+  max-width: 380px;
+}
+
+.story-image {
+  overflow: hidden;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.story-image:hover img {
+  transform: scale(1.04);
+}
+
+.looks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.look-card {
+  position: relative;
+  overflow: hidden;
+  height: 620px;
+  cursor: pointer;
+}
+
+.look-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.look-card:hover img {
+  transform: scale(1.05);
+}
+
+.look-info {
+  position: absolute;
+  bottom: 32px;
+  left: 28px;
+  color: #fff;
+}
+
+.look-info span {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  opacity: 0.75;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.look-info h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.palette {
+  text-align: center;
+  padding: 100px 40px;
+  background-color: #f2f0eb;
+}
+
+.palette span {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: #9c9a94;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.palette h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 48px;
+}
+
+.colors {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.sand       { background-color: #d4c5a9; }
+.camel      { background-color: #c19a6b; }
+.terracotta { background-color: #c1673a; }
+.olive      { background-color: #6b7042; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 400px;
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.04);
+}
+
+.cta {
+  text-align: center;
+  padding: 120px 40px;
+  background-color: #1e1c18;
+  color: #f2f0eb;
+}
+
+.cta span {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  opacity: 0.55;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.cta h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 600;
 }
