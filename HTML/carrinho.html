@@ -3,9 +3,14 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>WalkWord - Meus Favoritos</title>
+    <title>WalkWord — Minha Seleção</title>
     
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;700&display=swap" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
     
     <link rel="stylesheet" href="../CSS/favoritos.css" />
@@ -17,10 +22,10 @@
 
       <nav>
         <ul>
-          <li><a href="../HTML/catalogo.html" class="ativo">Catalog</a></li>
-          <li><a href="../HTML/newin.html">New in</a></li>
-          <li><a href="../HTML/storie.html">Stories</a></li>
-          <li><a href="../HTML/abtus.html">About</a></li>
+          <li><a href="../HTML/catalogo.html" class="ativo">Catálogo</a></li>
+          <li><a href="../HTML/newin.html">Novidades</a></li>
+          <li><a href="../HTML/storie.html">Histórias</a></li>
+          <li><a href="../HTML/abtus.html">Sobre nós</a></li>
         </ul>
       </nav>
 
@@ -36,21 +41,21 @@
 
     <main>
         <div class="breadcrumbs">
-            <a href="#">Home</a>
+            <a href="#">Início</a>
             <span class="material-symbols-outlined icon-small">chevron_right</span>
-            <span class="current-page">Meus Favoritos</span>
+            <span class="current-page">Minha Seleção</span>
         </div>
 
-       <section class="account-container">
+        <section class="account-container">
             <aside class="account-sidebar">
                 <nav class="sidebar-menu">
                     <a href="../HTML/cadastro.html" class="active">
                         <span class="material-symbols-outlined">person</span>
-                        Meu Cadastro
+                        Meu Perfil
                     </a>
                     <a href="../HTML/carrinho.html">
                         <span class="material-symbols-outlined">shopping_bag</span>
-                        Meu Carrinho
+                        Minha Seleção
                     </a>
                     <a href="../HTML/pedidos.html">
                         <span class="material-symbols-outlined">inventory_2</span>
@@ -58,7 +63,7 @@
                     </a>
                     <a href="../HTML/favoritos.html">
                         <span class="material-symbols-outlined">favorite</span>
-                        Meus favoritos
+                        Peças Salvas
                     </a>
                     <a href="../HTML/senha.html">
                         <span class="material-symbols-outlined">key</span>
@@ -68,10 +73,30 @@
             </aside>
 
             <div class="account-content">
-                <h2>Meus Favoritos</h2>
-                <p class="section-description">Sua curadoria pessoal. Aqui estão os produtos que você marcou com um coração.</p>
+                <h2>Minha Seleção</h2>
                 
-                <div class="favorites-grid" id="favorites-container">
+                <div class="cart-wrapper">
+                    <div class="cart-items" id="cart-container">
+                    </div>
+
+                    <div class="cart-summary">
+                        <h3>Resumo</h3>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summary-subtotal">R$ 0,00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Envio</span>
+                            <span class="free-shipping">Cortesia</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="summary-total">R$ 0,00</span>
+                        </div>
+                        
+                        <a class="btn-primary btn-checkout" href="compra.html">Finalizar Pedido</a>
+                        <a href="favoritos.html" class="keep-shopping">Continuar Garimpando</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -80,7 +105,7 @@
     <footer class="footer">
         <div class="footer-brand">
             <h2>WalkWord</h2>
-            <p>© 2026 WalkWord. Crafted for the Conscious Curator.</p>
+            <p>© 2026 WalkWord. Feito para quem veste com intenção.</p>
         </div>
         <div class="footer-links">
             <h3>Suporte</h3>
@@ -88,7 +113,7 @@
             <a href="#">Ajuda</a>
         </div>
     </footer>
+
     <script src="js/carrinho.js"></script>
-    <script src="js/favoritos.js"></script>
 </body>
 </html>

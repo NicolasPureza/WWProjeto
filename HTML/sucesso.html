@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WalkWord - Compra Efetuada</title>
+    <title>WalkWord — Pedido Confirmado</title>
     <link rel="stylesheet" href="../CSS/sucesso.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
 
-   <header>
-      <a href="../HTML/mainpage.html" class="logo">WalkWord</a>
+    <header>
+        <a href="../HTML/mainpage.html" class="logo">WalkWord</a>
 
-      <nav>
-        <ul>
-          <li><a href="../HTML/catalogo.html" class="ativo">Catalog</a></li>
-          <li><a href="../HTML/newin.html">New in</a></li>
-          <li><a href="../HTML/storie.html">Stories</a></li>
-          <li><a href="../HTML/abtus.html">About</a></li>
-        </ul>
-      </nav>
+        <nav>
+            <ul>
+                <li><a href="../HTML/catalogo.html" class="ativo">Catálogo</a></li>
+                <li><a href="../HTML/newin.html">Novidades</a></li>
+                <li><a href="../HTML/storie.html">Histórias</a></li>
+                <li><a href="../HTML/abtus.html">Sobre nós</a></li>
+            </ul>
+        </nav>
 
-      <div class="icones">
-        <a href="../HTML/carrinho.html">
-          <img src="../assets/shopping-cart.png" alt="Carrinho">
-        </a>
-        <a href="../HTML/perfil.html">
-          <img src="../assets/pessoa.png" alt="Perfil">
-        </a>
-      </div>
+        <div class="icones">
+            <a href="../HTML/carrinho.html">
+                <img src="../assets/shopping-cart.png" alt="Carrinho">
+            </a>
+            <a href="../HTML/perfil.html">
+                <img src="../assets/pessoa.png" alt="Perfil">
+            </a>
+        </div>
     </header>
 
     <div class="progress-bar">
@@ -44,8 +49,8 @@
                 <div class="check-icon" id="success-icon-container">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#546652" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                 </div>
-                <h2 id="success-title">Compra realizada com sucesso!</h2>
-                <p id="success-message">Obrigado por escolher a WalkWord. Seu pedido foi confirmado e já estamos preparando tudo para você.</p>
+                <h2 id="success-title">Sua peça está a caminho.</h2>
+                <p id="success-message">Obrigado por escolher a WalkWord. Seu pedido foi confirmado e já estamos preparando tudo com cuidado para você.</p>
             </div>
 
             <div id="pix-payment-container" class="pix-success-box" style="display: none;">
@@ -54,7 +59,7 @@
                     <img id="pix-qr-code" src="" alt="QR Code PIX">
                 </div>
 
-                <h3>Ou copie o código PIX Copia e Cola abaixo:</h3>
+                <h3>Ou copie o código PIX abaixo:</h3>
                 <div class="pix-code-row">
                     <input type="text" id="pix-copia-cola" value="00020101021226850014br.gov.bcb.pix2563qrcode.walkword.com/prod/pagamento/18923719823719" readonly>
                     <button id="btn-copiar-pix">COPIAR</button>
@@ -72,41 +77,40 @@
                 <div class="info-group">
                     <h3>Previsão de Entrega</h3>
                     <p>A partir de <strong id="delivery-date">...</strong></p>
-                    <span class="sub-text">Entrega Normal (6 dias úteis)</span>
+                    <span class="sub-text">Entrega padrão (6 dias úteis)</span>
                 </div>
             </div>
 
             <div class="delivery-address">
                 <h3>Endereço de Entrega</h3>
-                <div id="success-address-details">
-                    </div>
+                <div id="success-address-details"></div>
             </div>
 
-            <button class="btn-primary" onclick="limparEVoltar()">VOLTAR PARA A LOJA</button>
+            <button class="btn-primary" onclick="limparEVoltar()">CONTINUAR GARIMPANDO</button>
         </section>
 
         <aside class="summary-section">
             <div class="summary-box">
-                <h3 class="summary-title">RESUMO DA COMPRA</h3>
+                <h3 class="summary-title">RESUMO DO PEDIDO</h3>
                 
                 <div class="summary-row">
                     <span>Subtotal</span>
-                    <span id="summary-subtotal">$0.00</span>
+                    <span id="summary-subtotal">R$ 0,00</span>
                 </div>
                 
                 <div class="summary-row">
-                    <span>Frete <br><small class="sub-text">ENTREGA 1 DE 1</small></span>
-                    <span id="summary-frete">$15.00</span>
+                    <span>Envio <br><small class="sub-text">ENTREGA 1 DE 1</small></span>
+                    <span id="summary-frete">R$ 15,00</span>
                 </div>
 
                 <div class="summary-total">
-                    <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> Total Pago</span>
-                    <span class="total-price" id="summary-total">$0.00</span>
+                    <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> Total pago</span>
+                    <span class="total-price" id="summary-total">R$ 0,00</span>
                 </div>
             </div>
 
             <div class="easy-exchange">
-                <span class="red-text">Troca fácil.</span> Troque seus produtos WalkWord em até 30 dias.
+                <span class="red-text">Troca sem complicação.</span> Devolvemos ou trocamos qualquer peça em até 30 dias.
             </div>
         </aside>
 
