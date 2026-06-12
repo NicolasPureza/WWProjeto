@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  background-color: #f2f0eb;
+  color: #1e1c18;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 58px;
+  background-color: #f2f0eb;
+  border-bottom: 1px solid #e0ddd6;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header .logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+}
+
+header nav ul li a:hover {
+  transform: scale(1.05);
+}
+
+header nav ul li a {
+  transition: transform 0.3s ease-in-out;
+  font-size: 14px;
+  color: #5c5a54;
+}
+
+header .icones {
+  display: flex;
+  gap: 16px;
+  font-size: 20px;
+}
+
+.icones img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  gap: 50px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1rem;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  width: 0%;
+  height: 1px;
+  background: #111;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+nav a:hover::after,
+nav .active::after {
+  width: 100%;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+  font-size: 1.4rem;
+}
+
+nav {
+  display: flex;
+  gap: 50px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1rem;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  width: 0%;
+  height: 1px;
+  background: #111;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+nav a:hover::after,
+nav .active::after {
+  width: 100%;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+  font-size: 1.4rem;
+}
+
+.password-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .password-form-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.password-form-grid .input-group {
+  position: relative;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0.5rem;
+  color: var(--on-surface-variant);
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.toggle-password-btn:hover {
+  opacity: 1;
+}
+
+.toggle-password-btn .material-symbols-outlined {
+  font-size: 1.25rem;
+}
+
+.password-requirements-wrapper {
+  grid-column: 1 / -1;
+  background-color: var(--surface-container-low);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.requirement-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.requirement-item .status-icon {
+  font-size: 1.15rem;
+  color: var(--outline-variant);
+  font-variation-settings: 'FILL' 0;
+  transition: all 0.3s ease;
+}
+
+.requirement-item.valid {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.requirement-item.valid .status-icon {
+  color: var(--primary);
+  font-variation-settings: 'FILL' 1;
+}
+
+.password-security-tips {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--outline-variant);
+}
+
+.password-security-tips h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.password-security-tips p {
+  font-size: 0.8rem;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+}
+
+.password-action-buttons {
+  max-width: 300px;
+}
+
+.disabled-btn {
+  background-color: var(--surface-container-high) !important;
+  color: var(--outline-variant) !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  opacity: 0.7;
+}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | WalkWord</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../CSS/login.css" />
+  </head>
+  <body>
+
+    
+    <main class="login-container">
+      <section class="left-panel">
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ9HL9BcA67W5n-NAsxu74XAF6ynAkdtIiTJCyC8gwP6f5NwYv0pKVwrtarZnEYUJ-BSivtmyX01BUvQw4wu4e3n1eep1YVp-u_OdvvLqAQUlngYtnm53Mk7ga000b12MurIvtuGwC-wKMAmT-A6rbepFPxSFmtZRk-0dc85gUQSYaUAayogiPK3flp5LV298Ii3mjZZ_o46-SS2xadCsUV894yzKp4jKnKDaB7RthZiD3eixleVXr8EwL1t92FKjajhCM56QuDM9V"
+          alt="Atelier"
+          class="bg-image"
+        />
+
+        <div class="overlay"></div>
+
+        <div class="content-left">
+          <p class="subtitle">THE CONSCIOUS CURATOR</p>
+          <h2 class="hero-text">
+            Archiving beauty,<br />
+            sustaining heritage.
+          </h2>
+        </div>
+      </section>
+
+      <section class="right-panel">
+        <div class="form-wrapper">
+          <div class="brand">
+            <h1 class="brand-name">WalkWord</h1>
+            <div class="brand-line"></div>
+          </div>
+
+          <div class="welcome-header">
+            <h3>Welcome back</h3>
+            <p>
+              Enter your credentials to access your curated archive and atelier
+              orders.
+            </p>
+          </div>
+
+          <form class="login-form" id="loginForm">
+            <div class="input-group">
+              <label for="email">Email</label>
+
+              <input
+                type="email"
+                id="email"
+                placeholder="alex@atelier.com"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <div class="label-row">
+                <label for="senha">Password</label>
+
+                <a href="#" class="forgot-link"> Forgot Password? </a>
+              </div>
+
+              <input
+                type="password"
+                id="senha"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn-submit">Entrar</button>
+          </form>
+
+          <div class="divider">
+            <span>Or continue with</span>
+          </div>
+
+          <div class="social-grid">
+            <button class="btn-social" type="button">Google</button>
+
+            <button class="btn-social" type="button">Apple</button>
+          </div>
+
+          <p class="signup-text">
+            Don't have an account?
+            <a href="cadastro.html">Sign up</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div class="floating-badge">
+      <span class="material-symbols-outlined"> energy_savings_leaf </span>
+
+      <span class="badge-text"> SUSTAINABILITY FIRST </span>
+    </div>
+
+    <script src="Login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WalkWord-Catalog</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/catalogo.css" />
+  </head>
+  <body>
+
+   <header>
+      <a href="../HTML/mainpage.html" class="logo">WalkWord</a>
+
+      <nav>
+        <ul>
+          <li><a href="../HTML/catalogo.html" class="ativo">Catalog</a></li>
+          <li><a href="../HTML/newin.html">New in</a></li>
+          <li><a href="../HTML/storie.html">Stories</a></li>
+          <li><a href="../HTML/abtus.html">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="icones">
+        <a href="../HTML/carrinho.html">
+          <img src="../assets/shopping-cart.png" alt="Carrinho">
+        </a>
+        <a href="../HTML/perfil.html">
+          <img src="../assets/pessoa.png" alt="Perfil">
+        </a>
+      </div>
+    </header>
+
+    <section id="hero">
+      <h1>The Curated Catalog</h1>
+      <p>
+        A timeless collection of ethical essentials and pre-loved artifacts,
+        balanced for the modern conscious curator.
+      </p>
+    </section>
+
+    <section id="loja">
+
+      <!-- Filter toggle (mobile only) -->
+      <button class="filter-toggle" id="filterToggle">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="3"  x2="14" y2="3"  stroke="#1e1c18" stroke-width="1.2"/>
+          <line x1="0" y1="7"  x2="14" y2="7"  stroke="#1e1c18" stroke-width="1.2"/>
+          <line x1="0" y1="11" x2="14" y2="11" stroke="#1e1c18" stroke-width="1.2"/>
+        </svg>
+        Filters
+      </button>
+
+      <!-- Desktop sidebar -->
+      <aside id="filtros">
+        <div class="grupo-filtro">
+          <h3>Condition</h3>
+          <label><input type="checkbox" checked /> Novo</label>
+          <label><input type="checkbox" /> Seminovo</label>
+        </div>
+
+        <div class="grupo-filtro">
+          <h3>Tamanho</h3>
+          <div class="grid-tamanhos">
+            <div class="btn-tamanho">XS</div>
+            <div class="btn-tamanho ativo">S</div>
+            <div class="btn-tamanho">M</div>
+            <div class="btn-tamanho">L</div>
+            <div class="btn-tamanho">XL</div>
+          </div>
+        </div>
+
+        <div class="grupo-filtro">
+          <h3>Cor</h3>
+          <div class="bolinhas-cor">
+            <div class="bolinha ativo" style="background: #4a5e45"></div>
+            <div class="bolinha" style="background: #7a3c30"></div>
+            <div class="bolinha" style="background: #6b5a4e"></div>
+            <div class="bolinha" style="background: #2c2c2a"></div>
+            <div class="bolinha" style="background: #e8e5de; border: 1px solid #ccc"></div>
+          </div>
+        </div>
+
+        <button class="btn-limpar">Clear All Filters</button>
+      </aside>
+
+      <!-- Mobile filter drawer -->
+      <div class="filter-drawer" id="filterDrawer">
+        <div class="filter-overlay" id="filterOverlay"></div>
+        <div class="filter-panel">
+          <div class="filter-panel-header">
+            <span>Filters</span>
+            <button class="filter-close" id="filterClose">×</button>
+          </div>
+
+          <div class="grupo-filtro">
+            <h3>Condition</h3>
+            <label><input type="checkbox" checked /> Novo</label>
+            <label><input type="checkbox" /> Seminovo</label>
+          </div>
+
+          <div class="grupo-filtro">
+            <h3>Tamanho</h3>
+            <div class="grid-tamanhos">
+              <div class="btn-tamanho">XS</div>
+              <div class="btn-tamanho ativo">S</div>
+              <div class="btn-tamanho">M</div>
+              <div class="btn-tamanho">L</div>
+              <div class="btn-tamanho">XL</div>
+            </div>
+          </div>
+
+          <div class="grupo-filtro">
+            <h3>Cor</h3>
+            <div class="bolinhas-cor">
+              <div class="bolinha ativo" style="background: #4a5e45"></div>
+              <div class="bolinha" style="background: #7a3c30"></div>
+              <div class="bolinha" style="background: #6b5a4e"></div>
+              <div class="bolinha" style="background: #2c2c2a"></div>
+              <div class="bolinha" style="background: #e8e5de; border: 1px solid #ccc"></div>
+            </div>
+          </div>
+
+          <button class="btn-limpar">Clear All Filters</button>
+        </div>
+      </div>
+
+      <div id="produtos">
+        <div class="grade-produtos">
+
+          <div class="card-produto">
+            <div class="imagem-produto">
+              <img src="https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=400&q=80" alt="Atelier Trench Coat" />
+              <span class="badge-condicao">Novo</span>
+              <span class="badge-eco">🌿 98/100</span>
+            </div>
+            <div class="info-produto">
+              <div class="linha-principal">
+                <span class="nome">Atelier Trench Coat</span>
+                <span class="preco">$420.00</span>
+              </div>
+              <span class="material">Organic Hemp Cotton Blend</span>
+            </div>
+          </div>
+
+          <div class="card-produto">
+            <div class="imagem-produto">
+              <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80" alt="Vintage Heritage Denim" />
+              <span class="badge-condicao">Seminovo</span>
+              <span class="badge-eco">🌿 82/100</span>
+            </div>
+            <div class="info-produto">
+              <div class="linha-principal">
+                <span class="nome">Vintage Heritage Denim</span>
+                <span class="preco">$185.00</span>
+              </div>
+              <span class="material">Pre-Loved · Excellent Condition</span>
+            </div>
+          </div>
+
+          <div class="card-produto">
+            <div class="imagem-produto">
+              <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80" alt="Merino Wool Pullover" />
+              <span class="badge-condicao">Novo</span>
+              <span class="badge-eco">🌿 94/100</span>
+            </div>
+            <div class="info-produto">
+              <div class="linha-principal">
+                <span class="nome">Merino Wool Pullover</span>
+                <span class="preco">$210.00</span>
+              </div>
+              <span class="material">Sustainably Sourced Merino</span>
+            </div>
+          </div>
+
+          <div class="card-produto">
+            <div class="imagem-produto">
+              <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80" alt="Artifact Leather Pouch" />
+              <span class="badge-condicao">Seminovo</span>
+              <span class="badge-eco">🌿 75/100</span>
+            </div>
+            <div class="info-produto">
+              <div class="linha-principal">
+                <span class="nome">Artifact Leather Pouch</span>
+                <span class="preco">$120.00</span>
+              </div>
+              <span class="material">Reclaimed Vegetable Tanned</span>
+            </div>
+          </div>
+
+          <div class="card-produto">
+            <div class="imagem-produto">
+              <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b4f8e?w=400&q=80" alt="Mediterranean Linen Shirt" />
+              <span class="badge-condicao">Novo</span>
+              <span class="badge-eco">🌿 100/100</span>
+            </div>
+            <div class="info-produto">
+              <div class="linha-principal">
+                <span class="nome">Mediterranean Linen Shirt</span>
+                <span class="preco">$145.00</span>
+              </div>
+              <span class="material">100% Belgian Organic Linen</span>
+            </div>
+          </div>
+
+          <div class="card-produto">
+            <div class="imagem-produto">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" alt="Essential Studio Sneaker" />
+              <span class="badge-condicao">Seminovo</span>
+              <span class="badge-eco">🌿 88/100</span>
+            </div>
+            <div class="info-produto">
+              <div class="linha-principal">
+                <span class="nome">Essential Studio Sneaker</span>
+                <span class="preco">$95.00</span>
+              </div>
+              <span class="material">Circular Exchange Program</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="paginacao">
+      <a href="#">Previous</a>
+      <a href="#" class="ativo">01</a>
+      <a href="#">02</a>
+      <a href="#">03</a>
+      <a href="#">Next</a>
+    </section>
+
+    <footer>
+      <div class="marca">
+        <p>WalkWord</p>
+        <small>© 2024 WalkWord.<br />Crafted for the<br />conscious curator.</small>
+      </div>
+
+      <div class="coluna">
+        <h4>Our Story</h4>
+        <ul>
+          <li><a href="#">Sustainability Commitment</a></li>
+          <li><a href="#">Our Materials</a></li>
+          <li><a href="#">Circular Promise</a></li>
+        </ul>
+      </div>
+
+      <div class="coluna">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Care Guide</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="newsletter">
+        <h4>Journal</h4>
+        <p>Receive notes on intentional living and archive releases.</p>
+        <div class="campo-email">
+          <input type="email" placeholder="Email Address" />
+          <button type="button">Join</button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script carregado AQUI, depois do </body>, sem inline antigo -->
+    <script src="cata.js"></script>
+
+  </body>
+</html>
