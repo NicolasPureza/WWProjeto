@@ -1,45 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. INTEGRAÇÃO COM O LOGIN: Verifica se o usuário simulado está no localStorage
-    const usuarioLogado = localStorage.getItem('usuarioLogado');
-    if (!usuarioLogado) {
+    // 1. VERIFICAÇÃO DE LOGIN: Se não achar os dados de login, joga o usuário para a tela de login
+    const usuarioLogadoRaw = localStorage.getItem('usuarioLogado');
+    if (!usuarioLogadoRaw) {
         alert('Acesso negado. Por favor, faça login primeiro.');
-        window.location.href = 'index.html'; // Redireciona para sua página de login
+        // CORREÇÃO AQUI: Mandando para login.html em vez de index.html
+        window.location.href = "login.html"; 
         return;
     }
 
+    const usuarioLogado = JSON.parse(usuarioLogadoRaw);
     const passwordForm = document.querySelector('.password-form');
     
     if (passwordForm) {
         passwordForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Impede a página de recarregar
+            e.preventDefault(); 
             
-            const currentPassword = document.getElementById('current-password');
-            const newPassword = document.getElementById('new-password');
-            const confirmPassword = document.getElementById('confirm-password');
+            const currentPassword = document.getElementById('current-password').value;
+            const newPassword = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
             
-            // Validação básica igual à do seu login
-            if (!currentPassword.value || !newPassword.value || !confirmPassword.value) {
+            // Puxa o cadastro completo do usuário para validar a senha atual
+            const chaveUsuario = `user:${usuarioLogado.email}`;
+            const dadosUsuario = JSON.parse(localStorage.getItem(chaveUsuario));
+
+            if (!currentPassword || !newPassword || !confirmPassword) {
                 alert('Por favor, preencha todos os campos para alterar sua senha.');
                 return;
             }
             
-            // Regra simples de tamanho mínimo
-            if (newPassword.value.length < 6) {
+            // Valida se a senha atual digitada bate com a que está salva no banco simulado
+            if (dadosUsuario && dadosUsuario.senha !== currentPassword) {
+                alert('A senha atual inserida está incorreta.');
+                return;
+            }
+            
+            if (newPassword.length < 6) {
                 alert('A nova senha deve ter pelo menos 6 caracteres.');
                 return;
             }
             
-            // Verifica se a nova senha e a confirmação são iguais
-            if (newPassword.value !== confirmPassword.value) {
+            if (newPassword !== confirmPassword) {
                 alert('A nova senha e a confirmação não coincidem.');
                 return;
             }
             
-            // Sucesso!
-            alert('Senha alterada com sucesso!');
+            // Atualiza a senha no cadastro do localStorage
+            dadosUsuario.senha = newPassword;
+            localStorage.setItem(chaveUsuario, JSON.stringify(dadosUsuario));
             
-            // Limpa o formulário após salvar
+            alert('Senha alterada com sucesso!');
             passwordForm.reset();
         });
     }

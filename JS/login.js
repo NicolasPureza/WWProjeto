@@ -11,9 +11,12 @@ form.addEventListener("submit", function (event) {
 
   if (usuario && usuario.senha === senha) {
     alert("Login realizado com sucesso!");
+    
+    // CORREÇÃO AQUI: Salva o estado de login que o arquivo senha.js vai procurar
+    localStorage.setItem('usuarioLogado', JSON.stringify({ email: email }));
+
     window.location.href = "../HTML/mainpage.html";
   } else {
     alert("Email ou senha incorretos!");
   }
-
 });

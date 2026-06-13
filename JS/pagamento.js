@@ -6,9 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const userEmailElement = document.getElementById('userEmail');
     const addressDetailsElement = document.getElementById('addressDetails');
     
-    const usuarioLogado = localStorage.getItem('usuarioLogado');
+    const usuarioLogadoRaw = localStorage.getItem('usuarioLogado');
     if (userEmailElement) {
-        userEmailElement.textContent = usuarioLogado ? usuarioLogado : "visitante@walkword.com";
+        if (usuarioLogadoRaw) {
+            try {
+                const usuarioObj = JSON.parse(usuarioLogadoRaw);
+                userEmailElement.textContent = usuarioObj.email || "visitante@walkword.com";
+            } catch (e) {
+                userEmailElement.textContent = usuarioLogadoRaw; // Caso seja texto puro
+            }
+        } else {
+            userEmailElement.textContent = "visitante@walkword.com";
+        }
     }
 
     const enderecoSalvo = localStorage.getItem('enderecoEntrega');
@@ -41,13 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const valorFrete = 15.00; 
     const totalGeral = subtotalGeral + valorFrete;
+    localStorage.setItem('valorTotalPedido', totalGeral.toFixed(2));
+    localStorage.setItem('subtotalPedido', subtotalGeral.toFixed(2));
 
-    if (subtotalElement) subtotalElement.innerText = `$${subtotalGeral.toFixed(2)}`;
-    if (freteElement) freteElement.innerText = `$${valorFrete.toFixed(2)}`;
-    if (totalElement) totalElement.innerText = `$${totalGeral.toFixed(2)}`;
+    if (subtotalElement) subtotalElement.innerText = `R$ ${subtotalGeral.toFixed(2).replace('.', ',')}`;
+    if (freteElement) freteElement.innerText = `R$ ${valorFrete.toFixed(2).replace('.', ',')}`;
+    if (totalElement) totalElement.innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
 
-    document.querySelectorAll('.parcela-total').forEach(el => el.innerText = totalGeral.toFixed(2));
-    document.querySelectorAll('.parcela-meia').forEach(el => el.innerText = (totalGeral / 2).toFixed(2));
+    document.querySelectorAll('.parcela-total').forEach(el => el.innerText = totalGeral.toFixed(2).replace('.', ','));
+    document.querySelectorAll('.parcela-meia').forEach(el => el.innerText = (totalGeral / 2).toFixed(2).replace('.', ','));
 
     /* ==========================================================================
        3. LÓGICA DAS ABAS (CARTÃO DE CRÉDITO X PIX)
@@ -74,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputValidade = document.getElementById('validade-cartao');
     const inputCvv = document.getElementById('cvv-cartao');
 
-    // Máscara do Número do Cartão (0000 0000 0000 0000)
     if (inputCartao) {
         inputCartao.addEventListener('input', (e) => {
             let valor = e.target.value.replace(/\D/g, '');
@@ -83,12 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Máscara da Validade (MM/AA)
     if (inputValidade) {
         inputValidade.addEventListener('input', (e) => {
-            let valor = e.target.value.replace(/\D/g, ''); // Remove letras
-            
-            // Se digitou mais de 2 números, coloca a barra de separação
+            let valor = e.target.value.replace(/\D/g, ''); 
             if (valor.length > 2) {
                 valor = valor.substring(0, 2) + '/' + valor.substring(2, 4);
             }
@@ -96,19 +103,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Máscara do CVV (Apenas 3 números)
     if (inputCvv) {
         inputCvv.addEventListener('input', (e) => {
-            // Remove tudo que não for número e limita a 3 caracteres
             e.target.value = e.target.value.replace(/\D/g, '').substring(0, 3);
         });
     }
 
     /* ==========================================================================
-       5. LÓGICA DE FINALIZAR O PEDIDO (VALIDAÇÕES DOS CAMPOS)
+       5. LÓGICA DE FINALIZAR O PEDIDO (SALVANDO NO HISTÓRICO)
        ========================================================================== */
     function concluirPedido(metodoEscolhido) {
+        const carrinhoAtual = JSON.parse(localStorage.getItem('carrinho')) || [];
+        const telaSubtotal = document.getElementById('payment-subtotal').innerText.replace('R$ ', '').replace(',', '.');
+        const telaTotal = document.getElementById('payment-total').innerText.replace('R$ ', '').replace(',', '.');
+
+        const numeroPedido = `WW-${Math.floor(100000 + Math.random() * 900000)}`;
+        const dataPedido = new Date().toLocaleDateString('pt-BR');
+
+        // Cria a estrutura do pedido para a tela de histórico ler
+        const novoPedido = {
+            id: numeroPedido,
+            data: dataPedido,
+            status: "Pagamento Aprovado",
+            metodo: metodoEscolhido,
+            subtotal: parseFloat(telaSubtotal),
+            total: parseFloat(telaTotal),
+            itens: carrinhoAtual
+        };
+
+        // Salva na lista de histórico de pedidos
+        const historicoPedidos = JSON.parse(localStorage.getItem('historicoPedidos')) || [];
+        historicoPedidos.unshift(novoPedido); 
+        localStorage.setItem('historicoPedidos', JSON.stringify(historicoPedidos));
+
+        // Dados temporários para a tela de sucesso imediata
         localStorage.setItem('metodoPagamento', metodoEscolhido);
+        localStorage.setItem('subtotalPedido', telaSubtotal);
+        localStorage.setItem('valorTotalPedido', telaTotal);
+        localStorage.setItem('ultimoPedidoId', numeroPedido);
+
         window.location.href = 'sucesso.html'; 
     }
 
@@ -118,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
         formCredito.addEventListener('submit', (e) => {
             e.preventDefault(); 
 
-            // 1. Validação do Número do Cartão (16 dígitos)
             if (inputCartao) {
                 const apenasNumeros = inputCartao.value.replace(/\s/g, '');
                 if (apenasNumeros.length < 16) {
@@ -128,7 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // 2. Validação da Validade (Precisa ter o formato MM/AA completo - 4 números)
             if (inputValidade) {
                 const apenasNumerosValidade = inputValidade.value.replace(/\D/g, '');
                 if (apenasNumerosValidade.length < 4) {
@@ -136,8 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     inputValidade.focus();
                     return;
                 }
-                
-                // Validação extra: impede meses maiores que 12
                 const mes = parseInt(apenasNumerosValidade.substring(0, 2), 10);
                 if (mes < 1 || mes > 12) {
                     alert('Mês inválido! Digite um mês entre 01 e 12.');
@@ -146,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // 3. Validação do CVV (Precisa ter exatamente 3 dígitos)
             if (inputCvv) {
                 if (inputCvv.value.length < 3) {
                     alert('Por favor, digite um CVV válido (3 dígitos).');
@@ -155,17 +183,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // Se passou por todas as três travas de segurança:
             concluirPedido('cartao'); 
         });
     }
 
-    // Gatilho para o botão do PIX
+    /* ==========================================================================
+       6. GATILHO E EXIBIÇÃO DO PIX DINÂMICO
+       ========================================================================== */
     const btnPix = document.getElementById('btn-finalizar-pix');
-    if (btnPix) {
+    const pixInstrucoes = document.getElementById('pix-instrucoes');
+    const areaQrCode = document.getElementById('area-qr-code');
+    const btnCopiar = document.getElementById('btn-copiar-pix');
+    const btnPixPago = document.getElementById('btn-pix-pago');
+
+    if (btnPix && pixInstrucoes && areaQrCode) {
         btnPix.addEventListener('click', (e) => {
             e.preventDefault(); 
-            concluirPedido('pix'); 
+            pixInstrucoes.style.display = 'none';
+            areaQrCode.style.display = 'block';
         });
     }
+
+    if (btnCopiar) {
+        btnCopiar.addEventListener('click', () => {
+            const inputChave = document.getElementById('chave-pix-copia');
+            if (inputChave) {
+                inputChave.select();
+                inputChave.setSelectionRange(0, 99999); 
+                navigator.clipboard.writeText(inputChave.value);
+                
+                btnCopiar.innerText = "Copiado!";
+                setTimeout(() => { btnCopiar.innerText = "Copiar"; }, 2000);
+            }
+        });
+    }
+
+    if (btnPixPago) {
+        btnPixPago.addEventListener('click', () => {
+            concluirPedido('pix');
+        });
+    }
+
 });

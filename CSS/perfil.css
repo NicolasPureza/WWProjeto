@@ -1,3 +1,6 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
 :root {
   --background: #fbf9f8;
   --on-surface: #1b1c1c;
@@ -44,6 +47,9 @@ button {
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
 }
 
+/* ==========================================================================
+   HEADER / NAVEGAÇÃO
+   ========================================================================== */
 header {
   display: flex;
   justify-content: space-between;
@@ -68,14 +74,14 @@ header nav ul {
   gap: 36px;
 }
 
-header nav ul li a:hover {
-  transform: scale(1.05);
-}
-
 header nav ul li a {
   transition: transform 0.3s ease-in-out;
   font-size: 14px;
   color: #5c5a54;
+}
+
+header nav ul li a:hover {
+  transform: scale(1.05);
 }
 
 header .icones {
@@ -166,6 +172,9 @@ nav .active::after {
 .nav-icons { display: flex; gap: 1.5rem; }
 .nav-icons button { color: var(--primary); }
 
+/* ==========================================================================
+   ESTRUTURA PRINCIPAL / MIOLO
+   ========================================================================== */
 main {
   padding-top: 7rem;
   padding-bottom: 4rem;
@@ -201,6 +210,9 @@ main {
   }
 }
 
+/* ==========================================================================
+   MENU LATERAL (SIDEBAR)
+   ========================================================================== */
 .sidebar-menu {
   display: flex;
   flex-direction: column;
@@ -232,6 +244,9 @@ main {
   font-weight: 700;
 }
 
+/* ==========================================================================
+   CONTEÚDO DO PERFIL / FORMULÁRIO
+   ========================================================================== */
 .account-content h2 {
   font-size: 1.8rem;
   margin-bottom: 2rem;
@@ -305,11 +320,14 @@ main {
   pointer-events: none;
 }
 
+/* ==========================================================================
+   SEÇÃO DE GÊNERO
+   ========================================================================== */
 .gender-section {
   background-color: var(--surface-container-low);
   padding: 1.5rem;
   border-radius: 8px;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem; /* Ajustado para conversar melhor com a seção abaixo */
 }
 
 .section-label {
@@ -361,48 +379,17 @@ main {
   transform: translate(-50%, -50%);
 }
 
+/* ==========================================================================
+   NOVA SEÇÃO DE PREFERÊNCIAS (CHECKBOXES REFORMULADOS)
+   ========================================================================== */
 .preferences-section {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  margin-bottom: 3rem;
-}
-
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: var(--on-surface-variant);
-}
-
-.checkbox-label input[type="checkbox"] { display: none; }
-
-.custom-checkbox {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--outline-variant);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
-}
-
-.custom-checkbox .material-symbols-outlined {
-  font-size: 14px;
-  color: white;
-  opacity: 0;
-}
-
-.checkbox-label input[type="checkbox"]:checked + .custom-checkbox {
-  background-color: var(--primary);
-  border-color: var(--primary);
-}
-
-.checkbox-label input[type="checkbox"]:checked + .custom-checkbox .material-symbols-outlined {
-  opacity: 1;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+  background-color: var(--surface-container-low);
+  padding: 1.5rem;
+  border-radius: 8px;
 }
 
 .action-buttons {
@@ -439,6 +426,9 @@ main {
 .btn-outline:hover { background-color: var(--surface-container-low); }
 .btn-primary:active, .btn-outline:active { transform: scale(0.98); }
 
+/* ==========================================================================
+   RODAPÉ (FOOTER)
+   ========================================================================== */
 .footer {
   background-color: var(--surface-container-low);
   padding: 3rem 2rem;
@@ -448,7 +438,51 @@ main {
   gap: 2rem;
 }
 
+
 .footer-brand h2 { font-size: 1.125rem; }
 .footer-brand p { font-size: 0.875rem; color: var(--on-surface-variant); }
 .footer-links h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--primary); margin-bottom: 1rem; }
 .footer-links a { display: block; font-size: 0.875rem; color: var(--on-surface-variant); margin-bottom: 0.5rem; }
+
+/* ==========================================================================
+   RESET E ESTILIZAÇÃO COMPLETA DA SEÇÃO DE NOTIFICAÇÕES (BLINDADO)
+   ========================================================================== */
+
+.secao-notificacoes {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.25rem !important;
+  margin-bottom: 3.5rem !important;
+  background-color: var(--surface-container-low) !important;
+  padding: 1.5rem !important;
+  border-radius: 8px !important;
+  width: 100% !important;
+}
+
+.item-notificacao {
+  display: flex !important;
+  align-items: flex-start !important; /* Alinha o quadrado com a primeira linha do texto */
+  gap: 12px !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  width: 100% !important;
+}
+
+/* ESCONDE TOTALMENTE O CHECKBOX AZUL PADRÃO DO NAVEGADOR */
+.input-notif-escondido { 
+  display: none !important; 
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+}
+
+/* ESTILIZAÇÃO DO TEXTO AO LADO */
+.texto-notificacao {
+  font-size: 0.9rem !important;
+  color: var(--on-surface-variant) !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+}
+

@@ -7,10 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
     
     <link rel="stylesheet" href="../CSS/favoritos.css" />
@@ -18,22 +15,22 @@
 <body>
 
     <header>
-        <a href="../HTML/mainpage.html" class="logo">WalkWord</a>
+        <a href="mainpage.html" class="logo">WalkWord</a>
 
         <nav>
             <ul>
-                <li><a href="../HTML/catalogo.html" class="ativo">Catálogo</a></li>
-                <li><a href="../HTML/newin.html">Novidades</a></li>
-                <li><a href="../HTML/storie.html">Histórias</a></li>
-                <li><a href="../HTML/abtus.html">Sobre nós</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="newin.html">Novidades</a></li>
+                <li><a href="storie.html">Histórias</a></li>
+                <li><a href="abtus.html">Sobre nós</a></li>
             </ul>
         </nav>
 
         <div class="icones">
-            <a href="../HTML/carrinho.html">
+            <a href="carrinho.html">
                 <img src="../assets/shopping-cart.png" alt="Carrinho">
             </a>
-            <a href="../HTML/perfil.html">
+            <a href="perfil.html">
                 <img src="../assets/pessoa.png" alt="Perfil">
             </a>
         </div>
@@ -41,34 +38,28 @@
 
     <main>
         <div class="breadcrumbs">
-            <a href="#">Início</a>
+            <a href="mainpage.html">Início</a>
             <span class="material-symbols-outlined icon-small">chevron_right</span>
             <span class="current-page">Alterar Senha</span>
         </div>
 
         <section class="account-container">
-            
             <aside class="account-sidebar">
                 <nav class="sidebar-menu">
                     <a href="perfil.html">
-                        <span class="material-symbols-outlined">person</span>
-                        Meu Perfil
+                        <span class="material-symbols-outlined">person</span> Meu Perfil
                     </a>
                     <a href="carrinho.html">
-                        <span class="material-symbols-outlined">shopping_bag</span>
-                        Minha Seleção
+                        <span class="material-symbols-outlined">shopping_bag</span> Minha Seleção
                     </a>
-                    <a href="#">
-                        <span class="material-symbols-outlined">inventory_2</span>
-                        Meus Pedidos
+                    <a href="pedidos.html">
+                        <span class="material-symbols-outlined">inventory_2</span> Meus Pedidos
                     </a>
                     <a href="favoritos.html">
-                        <span class="material-symbols-outlined">favorite</span>
-                        Peças Salvas
+                        <span class="material-symbols-outlined">favorite</span> Peças Salvas
                     </a>
-                    <a href="alterar-senha.html" class="active">
-                        <span class="material-symbols-outlined">key</span>
-                        Alterar Senha
+                    <a href="senha.html" class="active">
+                        <span class="material-symbols-outlined">key</span> Alterar Senha
                     </a>
                 </nav>
             </aside>
@@ -79,7 +70,6 @@
                 
                 <form class="password-form">
                     <div class="form-grid">
-                        
                         <div class="input-group">
                             <label for="current-password">Senha atual</label>
                             <span class="material-symbols-outlined input-icon">key</span>
@@ -97,7 +87,6 @@
                             <span class="material-symbols-outlined input-icon">lock_reset</span>
                             <input type="password" id="confirm-password" placeholder="••••••••">
                         </div>
-
                     </div>
 
                     <div class="action-buttons">
@@ -120,6 +109,6 @@
         </div>
     </footer>
 
-    <script src="js/senha.js"></script>
+    <script src="../JS/senha.js"></script>
 </body>
 </html>

@@ -7,10 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     
     <link rel="stylesheet" href="../CSS/favoritos.css">
@@ -18,22 +15,22 @@
 <body>
 
     <header>
-        <a href="../HTML/mainpage.html" class="logo">WalkWord</a>
+        <a href="mainpage.html" class="logo">WalkWord</a>
 
         <nav>
             <ul>
-                <li><a href="../HTML/catalogo.html" class="ativo">Catálogo</a></li>
-                <li><a href="../HTML/newin.html">Novidades</a></li>
-                <li><a href="../HTML/storie.html">Histórias</a></li>
-                <li><a href="../HTML/abtus.html">Sobre nós</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="newin.html">Novidades</a></li>
+                <li><a href="storie.html">Histórias</a></li>
+                <li><a href="abtus.html">Sobre nós</a></li>
             </ul>
         </nav>
 
         <div class="icones">
-            <a href="../HTML/carrinho.html">
+            <a href="carrinho.html">
                 <img src="../assets/shopping-cart.png" alt="Carrinho">
             </a>
-            <a href="../HTML/perfil.html">
+            <a href="perfil.html">
                 <img src="../assets/pessoa.png" alt="Perfil">
             </a>
         </div>
@@ -41,7 +38,7 @@
 
     <main>
         <div class="breadcrumbs">
-            <a href="#">Início</a>
+            <a href="mainpage.html">Início</a>
             <span class="material-symbols-outlined icon-small">chevron_right</span>
             <span class="current-page">Meu Perfil</span>
         </div>
@@ -49,25 +46,20 @@
         <section class="account-container">
             <aside class="account-sidebar">
                 <nav class="sidebar-menu">
-                    <a href="../HTML/cadastro.html" class="active">
-                        <span class="material-symbols-outlined">person</span>
-                        Meu Perfil
+                    <a href="perfil.html" class="active">
+                        <span class="material-symbols-outlined">person</span> Meu Perfil
                     </a>
-                    <a href="../HTML/carrinho.html">
-                        <span class="material-symbols-outlined">shopping_bag</span>
-                        Minha Seleção
+                    <a href="carrinho.html">
+                        <span class="material-symbols-outlined">shopping_bag</span> Minha Seleção
                     </a>
-                    <a href="../HTML/pedidos.html">
-                        <span class="material-symbols-outlined">inventory_2</span>
-                        Meus Pedidos
+                    <a href="pedidos.html">
+                        <span class="material-symbols-outlined">inventory_2</span> Meus Pedidos
                     </a>
-                    <a href="../HTML/favoritos.html">
-                        <span class="material-symbols-outlined">favorite</span>
-                        Peças Salvas
+                    <a href="favoritos.html">
+                        <span class="material-symbols-outlined">favorite</span> Peças Salvas
                     </a>
-                    <a href="../HTML/senha.html">
-                        <span class="material-symbols-outlined">key</span>
-                        Alterar Senha
+                    <a href="senha.html">
+                        <span class="material-symbols-outlined">key</span> Alterar Senha
                     </a>
                 </nav>
             </aside>
@@ -85,19 +77,19 @@
                         <div class="input-group">
                             <label for="nome">Nome</label>
                             <span class="material-symbols-outlined input-icon">person</span>
-                            <input type="text" id="nome" placeholder="Anthony">
+                            <input type="text" id="nome" placeholder="Nome" required pattern="[A-Za-zÀ-ÿ\s]+" title="O nome deve conter apenas letras.">
                         </div>
 
                         <div class="input-group">
                             <label for="sobrenome">Sobrenome</label>
                             <span class="material-symbols-outlined input-icon">person</span>
-                            <input type="text" id="sobrenome" placeholder="Santos">
+                            <input type="text" id="sobrenome" placeholder="Sobrenome" required pattern="[A-Za-zÀ-ÿ\s]+" title="O sobrenome deve conter apenas letras.">
                         </div>
 
                         <div class="input-group">
                             <label for="cpf">CPF</label>
                             <span class="material-symbols-outlined input-icon">badge</span>
-                            <input type="text" id="cpf" placeholder="*********-16">
+                            <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" inputmode="numeric">
                         </div>
 
                         <div class="input-group">
@@ -109,13 +101,13 @@
                         <div class="input-group">
                             <label for="email">E-mail</label>
                             <span class="material-symbols-outlined input-icon">mail</span>
-                            <input type="email" id="email" placeholder="anthonypds08@gmail.com">
+                            <input type="email" id="email" placeholder="">
                         </div>
 
                         <div class="input-group">
                             <label for="telefone">Telefone</label>
                             <span class="material-symbols-outlined input-icon">call</span>
-                            <input type="text" id="telefone" placeholder="(15) 99158-2594">
+                            <input type="text" id="telefone" placeholder="(00) 00000-0000" maxlength="15" inputmode="numeric">
                         </div>
                     </div>
 
@@ -124,43 +116,22 @@
                         <div class="radio-group">
                             <label class="radio-label">
                                 <input type="radio" name="genero" value="Feminino">
-                                <span class="custom-radio"></span>
-                                Feminino
+                                <span class="custom-radio"></span> Feminino
                             </label>
                             <label class="radio-label">
                                 <input type="radio" name="genero" value="Masculino">
-                                <span class="custom-radio"></span>
-                                Masculino
+                                <span class="custom-radio"></span> Masculino
                             </label>
                             <label class="radio-label">
                                 <input type="radio" name="genero" value="Prefiro não informar">
-                                <span class="custom-radio"></span>
-                                Prefiro não informar
+                                <span class="custom-radio"></span> Prefiro não informar
                             </label>
                         </div>
                     </div>
 
-                    <div class="preferences-section">
-                        <label class="checkbox-label">
-                            <input type="checkbox" checked>
-                            <span class="custom-checkbox"><span class="material-symbols-outlined">check</span></span>
-                            Quero receber novidades, lançamentos e seleções especiais da WalkWord
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" checked>
-                            <span class="custom-checkbox"><span class="material-symbols-outlined">check</span></span>
-                            Quero acompanhar meus pedidos por SMS.
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" checked>
-                            <span class="custom-checkbox"><span class="material-symbols-outlined">check</span></span>
-                            Quero receber notificações pelo WhatsApp.
-                        </label>
-                    </div>
-
                     <div class="action-buttons">
                         <button type="submit" class="btn-primary">Salvar alterações</button>
-                        <button type="button" class="btn-outline">Encerrar cadastro</button>
+                        <button type="button" class="btn-outline" id="btn-sair">Sair da conta</button>
                     </div>
                 </form>
             </div>
@@ -179,6 +150,6 @@
         </div>
     </footer>
 
-    <script src="js/perfil.js"></script>
+    <script src="../JS/perfil.js"></script>
 </body>
 </html>

@@ -19,8 +19,8 @@ function carregarCarrinho() {
                 <p class="item-meta">Sua sacola de compras está vazia.</p>
             </div>
         `;
-        if (subtotalElement) subtotalElement.innerText = "$0.00";
-        if (totalElement) totalElement.innerText = "$0.00";
+        if (subtotalElement) subtotalElement.innerText = "R$ 0,00";
+        if (totalElement) totalElement.innerText = "R$ 0,00";
         return;
     }
 
@@ -58,16 +58,16 @@ function carregarCarrinho() {
                 </button>
             </div>
             <div class="item-price">
-                <span>$${precoTotalItem.toFixed(2)}</span>
+                <span>R$ ${precoTotalItem.toFixed(2).replace('.', ',')}</span>
             </div>
         `;
 
         container.appendChild(itemDiv);
     });
 
-    // Atualiza os valores do painel de resumo lateral
-    if (subtotalElement) subtotalElement.innerText = `$${subtotalGeral.toFixed(2)}`;
-    if (totalElement) totalElement.innerText = `$${subtotalGeral.toFixed(2)}`;
+    // Atualiza os valores do painel de resumo lateral mudando o ponto por vírgula brasileira
+    if (subtotalElement) subtotalElement.innerText = `R$ ${subtotalGeral.toFixed(2).replace('.', ',')}`;
+    if (totalElement) totalElement.innerText = `R$ ${subtotalGeral.toFixed(2).replace('.', ',')}`;
 
     // Ativa os ouvintes de clique nos novos botões gerados
     configurarEventosCarrinho();
@@ -129,4 +129,3 @@ function configurarEventosCarrinho() {
 document.addEventListener('DOMContentLoaded', () => {
     carregarCarrinho();
 });
-Carrinho

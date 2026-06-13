@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="input-group full-width">
                                     <label>Nome impresso no cartão</label>
-                                    <input type="text" placeholder="NOME DO TITULAR" required>
+                                    <input type="text" id="nome-cartao" placeholder="NOME DO TITULAR" required>
                                 </div>
                                 <div class="form-row">
                                     <div class="input-group">
@@ -130,9 +130,9 @@
                                 </div>
                                 <div class="input-group full-width" style="margin-top: 1rem;">
                                     <label>Parcelamento</label>
-                                    <select class="custom-select">
-                                        <option>1x de R$ <span class="parcela-total">0,00</span> sem juros</option>
-                                        <option>2x de R$ <span class="parcela-meia">0,00</span> sem juros</option>
+                                    <select class="custom-select" id="select-parcelas">
+                                        <option id="opcao-parcela-1">1x de R$ 0,00 sem juros</option>
+                                        <option id="opcao-parcela-2">2x de R$ 0,00 sem juros</option>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn-primary" style="margin-top: 2rem;">CONFIRMAR PEDIDO</button>
@@ -141,11 +141,29 @@
 
                         <div id="tab-pix" class="payment-panel">
                             <h3 class="panel-title">Pagamento via PIX</h3>
-                            <div class="pix-info">
-                                <span class="material-symbols-outlined pix-icon">qr_code_scanner</span>
-                                <p>O código PIX será gerado após a confirmação do pedido. Você terá até 60 minutos para concluir o pagamento.</p>
+                            
+                            <div id="pix-instrucoes">
+                                <div class="pix-info">
+                                    <span class="material-symbols-outlined pix-icon">qr_code_scanner</span>
+                                    <p>O código PIX será gerado após clicar no botão abaixo. Você terá até 60 minutos para concluir o pagamento.</p>
+                                </div>
+                                <button id="btn-finalizar-pix" class="btn-primary" style="margin-top: 2rem;">GERAR PIX E CONFIRMAR</button>
                             </div>
-                            <button id="btn-finalizar-pix" class="btn-primary" style="margin-top: 2rem;">GERAR PIX E CONFIRMAR</button>
+
+                            <div id="area-qr-code" style="display: none; text-align: center; margin-top: 1.5rem;">
+                                <p style="font-weight: 500; margin-bottom: 1rem; color: var(--primary);">PIX GERADO COM SUCESSO!</p>
+                                
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=WalkWordPixFicticio" alt="QR Code PIX WalkWord" style="border: 1px solid var(--outline-variant); padding: 10px; border-radius: 8px; background: white;">
+                                
+                                <p style="font-size: 0.85rem; color: var(--on-surface-variant); margin: 1rem 0 0.5rem 0;">Você também pode pagar copiando o código abaixo:</p>
+                                
+                                <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem;">
+                                    <input type="text" id="chave-pix-copia" value="00020101021126360014br.gov.bcb.pix0114walkwordficticio" readonly style="font-size: 0.8rem; padding: 0.5rem; border: 1px solid var(--outline-variant); border-radius: 4px; width: 70%; background: #f9f9f9;">
+                                    <button id="btn-copiar-pix" class="btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Copiar</button>
+                                </div>
+
+                                <button id="btn-pix-pago" class="btn-primary">JÁ REALIZEI O PAGAMENTO</button>
+                            </div>
                         </div>
 
                     </div>
@@ -192,6 +210,6 @@
         </div>
     </main>
 
-    <script src="js/pagamento.js"></script>
+    <script src="../JS/pagamento.js"></script>
 </body>
 </html>
