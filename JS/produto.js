@@ -4,67 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
        1. BANCO DE DADOS UNIFICADO (PRODUTOS ANTIGOS + NOVOS)
        ========================================================================== */
     const produtosDB = {
-        // PRODUTOS ORIGINAIS
-        "coturno-heritage": {
-            id: "coturno-heritage",
-            tituloPagina: "WalkWord — Coturno Heritage em Couro com Cadarço",
-            categoria: "Calçados",
-            nome: "Coturno Anacapri com Detalhes em Metal",
-            badge: "Peça do Arquivo",
-            archivalNo: "Peça Archival Nº 351",
-            preco: 245.00,
-            precoAntigo: "R$ 320,00",
-            descricao: "Confeccionado em couro curtido de alta qualidade, este coturno une robustez e elegância artesanal. Pensado para o uso diário e feito para envelhecer com beleza — ganhando, com o tempo, uma personalidade única para cada jornada.",
-            imagemPrincipal: "../assets/botaperto.png",
-            thumbnails: ["../assets/botalonge.png", "../assets/botatextura.png"],
-            material: "Couro curtido integral",
-            origem: "Artesanato Heritage"
-        },
-        "camisa-oxford": {
-            id: "camisa-oxford",
-            tituloPagina: "WalkWord — Camisa de Algodão Oxford",
-            categoria: "Vestuário",
-            nome: "Camisa de Algodão Oxford",
-            badge: "Garimpado",
-            archivalNo: "Peça Archival Nº 218",
-            preco: 120.00,
-            precoAntigo: "R$ 165,00",
-            descricao: "Um item essencial e refinado para o guarda-roupa. Confeccionada em algodão estruturado com colarinho de botões e silhueta sob medida. Desenvolvida para versatilidade diária, equilibrando conforto, estrutura e apelo atemporal.",
-            imagemPrincipal: "../assets/camisaperto.png",
-            thumbnails: ["../assets/camisalonge.png", "../assets/camisatecido.png"],
-            material: "Algodão Oxford Premium",
-            origem: "Alfaiataria Estruturada"
-        },
-        "cardigan-heritage": {
-            id: "cardigan-heritage",
-            tituloPagina: "WalkWord — Cardigan Heritage em Lã Natural",
-            categoria: "Malharia",
-            nome: "Cardigan Heritage em Lã Natural",
-            badge: "Garimpado",
-            archivalNo: "Peça Archival Nº 429",
-            preco: 345.00,
-            precoAntigo: "R$ 520,00",
-            descricao: "Um verdadeiro estudo sobre a longevidade têxtil. Esta peça tecida à mão apresenta lã de merino de alta gramatura, originária de fazendas regenerativas nas Terras Altas da Escócia. Desenvolvida para respirar e envelhecer com perfeição.",
-            imagemPrincipal: "../assets/camisa verde.png",
-            thumbnails: ["../assets/camisa verde.png", "../assets/camisa verde.png"],
-            material: "100% Lã Merino Rastreada",
-            origem: "Tricotado à mão na Escócia"
-        },
-        "bracelete-ouro": {     
-            id: "bracelete-ouro",
-            tituloPagina: "WalkWord — Bracelete Escultural em Ouro Escovado",
-            categoria: "Acessórios",
-            nome: "Bracelete Escultural em Ouro Escovado",
-            badge: "Edição do Ateliê",
-            archivalNo: "Peça Ateliê Nº 127",
-            preco: 145.00,
-            precoAntigo: "R$ 195,00",
-            descricao: "Definido por linhas limpas e acabamento fosco, este bracelete de aro aberto equilibra uma elegância sutil com o minimalismo contemporâneo. Desenhado para um encaixe anatômico e versatilidade sem esforço.",
-            imagemPrincipal: "../assets/braceleteperto.png",
-            thumbnails: ["../assets/braceletelonge.png", "../assets/braceletetextura.png"],
-            material: "Ouro Escovado Maciço",
-            origem: "Construção de Aro Aberto"
-        },
 
         // NOVOS PRODUTOS INTEGRADOS (COLEÇÃO INVERNO / OUTONO / NOVOS)
         "cardigan-cinza": {
@@ -77,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 179.90,
             precoAntigo: "R$ 229,00",
             descricao: "Cardigan em lã com acabamento sofisticado e toque macio para os dias frios.",
-            imagemPrincipal: "imagens/cardiganfrente.png",
-            thumbnails: ["imagens/cardiganatras.PNG", "imagens/cardigantecido.png"],
+            imagemPrincipal: " ../assets/cardiganfrente.png",
+            thumbnails: ["../assets/cardiganatras.PNG", "../assets/cardigantecido.png"],
             material: "Mescla de Lã Macia",
             origem: "Malharia Local"
         },
@@ -92,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 299.90,
             precoAntigo: "R$ 380,00",
             descricao: "Jaqueta puffer marrom com excelente isolamento térmico e visual moderno.",
-            imagemPrincipal: "imagens/pufferfrente.png",
-            thumbnails: ["imagens/pufferatras.png", "imagens/puffertecido.png"],
+            imagemPrincipal: "../assets/pufferfrente.png",
+            thumbnails: ["../assets/pufferatras.png", "../assets/puffertecido.png"],
             material: "Poliamida com Isolamento Térmico",
             origem: "Ateliê Técnico"
         },
@@ -107,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 149.90,
             precoAntigo: "R$ 199,00",
             descricao: "Calça marrom versátil para composições elegantes e casuais.",
-            imagemPrincipal: "imagens/calcamarromfrente.png",
-            thumbnails: ["imagens/calcamarromatras.png", "imagens/calcamarromtecido.png"],
+            imagemPrincipal: "../assets/calcamarromfrente.png",
+            thumbnails: ["../assets/calcamarromatras.png", "../assets/calcamarromtecido.png"],
             material: "Sarja de Algodão Estruturada",
             origem: "Corte Reto Clássico"
         },
@@ -122,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 159.90,
             precoAntigo: "R$ 210,00",
             descricao: "Suéter em lã bege com caimento confortável e estilo clássico.",
-            imagemPrincipal: "imagens/sueterfrente.png",
-            thumbnails: ["imagens/sueteratras.png", "imagens/suetertecido.png"],
+            imagemPrincipal: "../assets/sueterfrente.png",
+            thumbnails: ["../assets/sueteratras.png", "../assets/suetertecido.png"],
             material: "Fio de Lã Acrílica Premium",
             origem: "Tricô Industrial Fino"
         },
@@ -137,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 349.90,
             precoAntigo: "R$ 450,00",
             descricao: "Sobretudo bege elegante para os dias mais frios.",
-            imagemPrincipal: "imagens/sobretudofrente.png",
-            thumbnails: ["imagens/sobretudoatras.png", "imagens/sobretudotecido.png"],
+            imagemPrincipal: "../assets/sobretudofrente.png",
+            thumbnails: ["../assets/sobretudoatras.png", "../assets/sobretudotecido.png"],
             material: "Lã Batida Estruturada",
             origem: "Alfaiataria de Inverno"
         },
@@ -152,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 169.90,
             precoAntigo: "R$ 220,00",
             descricao: "Suéter xadrez com design moderno e acabamento premium.",
-            imagemPrincipal: "imagens/sueterxadrezfrente.webp",
-            thumbnails: ["imagens/sueterxadrezcosta.png", "imagens/sueterxadreztecido.png"],
+            imagemPrincipal: "../assets/sueterxadrezfrente.webp",
+            thumbnails: ["../assets/sueterxadrezcosta.png", "../assets/sueterxadreztecido.png"],
             material: "Algodão Trama Grossa",
             origem: "Tricô Urbano"
         },
@@ -167,8 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 379.90,
             precoAntigo: "R$ 499,00",
             descricao: "Trench coat bege inspirado na moda atemporal.",
-            imagemPrincipal: "imagens/trenchfrente.png",
-            thumbnails: ["imagens/trenchcostas.png", "imagens/trenchtextura.png"],
+            imagemPrincipal: "../assets/trenchfrente.png",
+            thumbnails: ["../assets/trenchcostas.png", "../assets/trenchtextura.png"],
             material: "Gabarine Impermeável",
             origem: "Corte Heritage"
         },
@@ -182,8 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 319.90,
             precoAntigo: "R$ 420,00",
             descricao: "Jaqueta em couro sintético com visual sofisticado.",
-            imagemPrincipal: "imagens/jaquetafrente.png",
-            thumbnails: ["imagens/jaquetacostas.png", "imagens/jaquetatextura.png"],
+            imagemPrincipal: "../assets/jaquetafrente.png",
+            thumbnails: ["../assets/jaquetacostas.png", "../assets/jaquetatextura.png"],
             material: "P.U. Premium Flexível",
             origem: "Ateliê de Costura"
         },
@@ -197,8 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 259.90,
             precoAntigo: "R$ 340,00",
             descricao: "Bota preta elegante com acabamento refinado.",
-            imagemPrincipal: "imagens/botinalonge.avif",
-            thumbnails: ["imagens/botinaperto.png", "imagens/botinatextura.png"],
+            imagemPrincipal: "../assets/botinalonge.avif",
+            thumbnails: ["../assets/botinaperto.png", "../assets/botinatextura.png"],
             material: "Couro Legítimo Nobre",
             origem: "Linha Industrial Heritage"
         },
@@ -212,8 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 59.90,
             precoAntigo: "R$ 89,00",
             descricao: "Bracelete dourado delicado para complementar qualquer visual.",
-            imagemPrincipal: "imagens/braceletelonge.png",
-            thumbnails: ["imagens/braceleteperto.png", "imagens/braceletetextura.png"],
+            imagemPrincipal: "../assets/braceletelonge.png",
+            thumbnails: ["../assets/braceleteperto.png", "../assets/braceletetextura.png"],
             material: "Banho de Ouro 18k",
             origem: "Ourivesaria Leve"
         },
@@ -227,8 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 169.90,
             precoAntigo: "R$ 229,00",
             descricao: "Calça social azul-marinho com modelagem elegante.",
-            imagemPrincipal: "imagens/calcalonge.png",
-            thumbnails: ["imagens/calcaperto.png", "imagens/calcatecido.png"],
+            imagemPrincipal: "../assets/calcalonge.png",
+            thumbnails: ["../assets/calcaperto.png", "../assets/calcatecido.png"],
             material: "Alfaiataria Crepe Premium",
             origem: "Modelagem Slim"
         },
@@ -242,8 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 129.90,
             precoAntigo: "R$ 175,00",
             descricao: "Camisa branca clássica indispensável para o guarda-roupa.",
-            imagemPrincipal: "imagens/camisalonge.png",
-            thumbnails: ["imagens/camisaperto.png", "imagens/camisatecido.png"],
+            imagemPrincipal: "../assets/camisalonge.png",
+            thumbnails: ["../assets/camisaperto.png", "../assets/camisatecido.png"],
             material: "100% Algodão Egípcio",
             origem: "Linha Essentials"
         },
@@ -257,8 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 189.90,
             precoAntigo: "R$ 240,00",
             descricao: "Cardigan verde em tricô com estilo aconchegante e moderno.",
-            imagemPrincipal: "imagens/verdelonge.png",
-            thumbnails: ["imagens/verdeperto.png", "imagens/verdetecido.png"],
+            imagemPrincipal: "../assets/verdelonge.png",
+            thumbnails: ["../assets/verdeperto.png", "../assets/verdetecido.png"],
             material: "Tricô Canelado Macio",
             origem: "Design Casual Autoral"
         },
@@ -272,8 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 249.90,
             precoAntigo: "R$ 320,00",
             descricao: "Bota marrom de couro com acabamento sofisticado e estilo atemporal.",
-            imagemPrincipal: "imagens/botalonge.png",
-            thumbnails: ["imagens/botaperto.png", "imagens/botatextura.png"],
+            imagemPrincipal: "../assets/botalonge.png",
+            thumbnails: ["../assets/botaperto.png", "../assets/botatextura.png"],
             material: "Couro Legítimo Amaciado",
             origem: "Artesanal Urbana"
         }
@@ -319,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
         thumbContainer.innerHTML = '';
         
         // Insere a imagem principal na galeria de miniaturas também
-        const todasImagens = [produto.imagemPrincipal, ...produto.thumbnails];
+        const todasImagens = produto.thumbnails;
         
         todasImagens.forEach((thumbUrl, index) => {
             if (thumbUrl) {

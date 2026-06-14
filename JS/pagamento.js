@@ -48,17 +48,40 @@ document.addEventListener('DOMContentLoaded', () => {
         subtotalGeral += (produto.preco * produto.quantidade);
     });
 
-    const valorFrete = 15.00; 
+    const valorFrete = 0; 
     const totalGeral = subtotalGeral + valorFrete;
     localStorage.setItem('valorTotalPedido', totalGeral.toFixed(2));
     localStorage.setItem('subtotalPedido', subtotalGeral.toFixed(2));
 
     if (subtotalElement) subtotalElement.innerText = `R$ ${subtotalGeral.toFixed(2).replace('.', ',')}`;
-    if (freteElement) freteElement.innerText = `R$ ${valorFrete.toFixed(2).replace('.', ',')}`;
+    if (freteElement) freteElement.innerText = "Grátis";
     if (totalElement) totalElement.innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
 
-    document.querySelectorAll('.parcela-total').forEach(el => el.innerText = totalGeral.toFixed(2).replace('.', ','));
-    document.querySelectorAll('.parcela-meia').forEach(el => el.innerText = (totalGeral / 2).toFixed(2).replace('.', ','));
+                for (let i = 1; i <= 6; i++) {
+        const opcao = document.getElementById(`opcao-parcela-${i}`);
+
+        if (opcao) {
+            const valorParcela = (totalGeral / i)
+                .toFixed(2)
+                .replace('.', ',');
+
+            opcao.textContent = `${i}x de R$ ${valorParcela} sem juros`;
+        }
+}
+        const abrirCupom = document.getElementById('abrirCupom');
+        const cupomBox = document.getElementById('cupomBox');
+
+        if (abrirCupom && cupomBox) {
+            abrirCupom.addEventListener('click', () => {
+
+                if (cupomBox.style.display === 'none') {
+                    cupomBox.style.display = 'flex';
+                } else {
+                    cupomBox.style.display = 'none';
+                }
+
+            });
+        }
 
     /* ==========================================================================
        3. LÓGICA DAS ABAS (CARTÃO DE CRÉDITO X PIX)
@@ -186,6 +209,14 @@ document.addEventListener('DOMContentLoaded', () => {
             concluirPedido('cartao'); 
         });
     }
+    const mensagemCupom = document.getElementById("mensagemCupom");
+
+            btnAplicarCupom.addEventListener("click", () => {
+
+    // sua lógica do cupom
+
+        mensagemCupom.innerHTML = "✓ Desconto aplicado com sucesso";
+});
 
     /* ==========================================================================
        6. GATILHO E EXIBIÇÃO DO PIX DINÂMICO

@@ -141,6 +141,29 @@ nav .active::after {
   position: relative;
   color: var(--on-surface-variant);
 }
+.cupom-container {
+    display: none;
+    margin-top: 1rem;
+}
+
+.cupom-container input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    font-size: 14px;
+    outline: none;
+    border-radius: 2rem;
+}
+
+#toggleCupom {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#toggleCupom:hover {
+    transform: scale(1.1);
+}
 
 .step.completed {
   background-color: var(--surface-container-low);

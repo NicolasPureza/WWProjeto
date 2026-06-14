@@ -16,6 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
             userEmailElement.textContent = "visitante@walkword.com";
         }
     }
+                    const toggleCupom = document.getElementById("toggleCupom");
+                const cupomContainer = document.getElementById("cupomContainer");
+
+                toggleCupom.addEventListener("click", () => {
+
+                    if (cupomContainer.style.display === "block") {
+                        cupomContainer.style.display = "none";
+                    } else {
+                        cupomContainer.style.display = "block";
+                    }
+
+                });
     /* ==========================================================================
        2. LIGAR COM O CARRINHO E CALCULAR RESUMO
        ========================================================================== */
@@ -65,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cidade: cidade,
                 estado: estado
             };
+            
 
             // Salva o endereço no localStorage
             localStorage.setItem('enderecoEntrega', JSON.stringify(enderecoEntrega));

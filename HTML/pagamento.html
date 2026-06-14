@@ -130,10 +130,14 @@
                                 </div>
                                 <div class="input-group full-width" style="margin-top: 1rem;">
                                     <label>Parcelamento</label>
-                                    <select class="custom-select" id="select-parcelas">
-                                        <option id="opcao-parcela-1">1x de R$ 0,00 sem juros</option>
-                                        <option id="opcao-parcela-2">2x de R$ 0,00 sem juros</option>
-                                    </select>
+                                <select class="custom-select" id="select-parcelas">
+                                    <option id="opcao-parcela-1"></option>
+                                    <option id="opcao-parcela-2"></option>
+                                    <option id="opcao-parcela-3"></option>
+                                    <option id="opcao-parcela-4"></option>
+                                    <option id="opcao-parcela-5"></option>
+                                    <option id="opcao-parcela-6"></option>
+                                </select>
                                 </div>
                                 <button type="submit" class="btn-primary" style="margin-top: 2rem;">CONFIRMAR PEDIDO</button>
                             </form>
@@ -153,16 +157,28 @@
                             <div id="area-qr-code" style="display: none; text-align: center; margin-top: 1.5rem;">
                                 <p style="font-weight: 500; margin-bottom: 1rem; color: var(--primary);">PIX GERADO COM SUCESSO!</p>
                                 
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=WalkWordPixFicticio" alt="QR Code PIX WalkWord" style="border: 1px solid var(--outline-variant); padding: 10px; border-radius: 8px; background: white;">
-                                
+                                <img
+                                src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=00020126580014BR.GOV.BCB.PIX0136a7a1a60a-2c9c-4621-908d-201947fc6df75204000053039865802BR5925Matheus Henrique Koop Bof6009SAO PAULO62140510Rje7elWWd96304B74C"
+                                alt="QR Code PIX WalkWord"
+                                style="border: 1px solid var(--outline-variant); padding: 10px; border-radius: 8px; background: white;">
+                                    
                                 <p style="font-size: 0.85rem; color: var(--on-surface-variant); margin: 1rem 0 0.5rem 0;">Você também pode pagar copiando o código abaixo:</p>
                                 
                                 <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem;">
-                                    <input type="text" id="chave-pix-copia" value="00020101021126360014br.gov.bcb.pix0114walkwordficticio" readonly style="font-size: 0.8rem; padding: 0.5rem; border: 1px solid var(--outline-variant); border-radius: 4px; width: 70%; background: #f9f9f9;">
-                                    <button id="btn-copiar-pix" class="btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Copiar</button>
-                                </div>
-
-                                <button id="btn-pix-pago" class="btn-primary">JÁ REALIZEI O PAGAMENTO</button>
+    
+                                    <input
+                                        type="text"
+                                        id="chave-pix-copia"
+                                        value="00020126580014BR.GOV.BCB.PIX0136a7a1a60a-2c9c-4621-908d-201947fc6df75204000053039865802BR5925Matheus Henrique Koop Bof6009SAO PAULO62140510Rje7elWWd96304B74C"
+                                        readonly
+                                        style="
+                                            font-size: 0.8rem;
+                                            padding: 0.5rem;
+                                            border: 1px solid var(--outline-variant);
+                                            border-radius: 4px;
+                                            width: 70%;
+                                            background: #f9f9f9;"> <button id="btn-copiar-pix" class="btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Copiar</button> </div>
+                             <button id="btn-pix-pago" class="btn-primary">JÁ REALIZEI O PAGAMENTO</button>
                             </div>
                         </div>
 
@@ -179,14 +195,20 @@
                         <span id="payment-subtotal">R$ 0,00</span>
                     </div>
                     
-                    <div class="summary-row">
+                         <div class="summary-row cupom-row" id="abrirCupom">
                         <span>Cupom</span>
-                        <span class="material-symbols-outlined">add_circle</span>
+                        <span class="material-symbols-outlined cupom-icon">add_circle</span>
                     </div>
+
+                    <div class="cupom-box" id="cupomBox" style="display: none;">
+                        <input type="text" id="inputCupom" placeholder="Digite seu cupom">
+                        <button id="btnAplicarCupom">Aplicar</button>
+                    </div>
+                    <p id="mensagemCupom" class="mensagem-cupom"></p>
 
                     <div class="summary-row freight-row">
                         <div style="display: flex; flex-direction: column;">
-                            <span>Envio</span>
+                            <span>Frete</span>
                             <span style="font-size: 0.7rem; color: var(--on-surface-variant)">ENTREGA 1 DE 1</span>
                         </div>
                         <span id="payment-frete">R$ 15,00</span>

@@ -94,6 +94,44 @@ nav .active::after {
   gap: 20px;
   font-size: 1.4rem;
 }
+.cupom-box {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.cupom-box input {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #d8d8d8;
+    outline: none;
+    border-radius: 2rem;
+}
+.cupom-icon {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cupom-icon:hover {
+    transform: scale(1.1);
+}
+.mensagem-cupom {
+    color: #526048;
+    font-size: 0.75rem;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.cupom-box button {
+    padding: 10px 15px;
+    background: #526048;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 2rem;
+    
+}
 
 .checkout-navbar { justify-content: space-between; }
 .secure-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 700; color: var(--primary); }

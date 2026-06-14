@@ -331,6 +331,21 @@ aside#filtros label {
   padding: 4px 10px;
   border-radius: 20px;
 }
+.btn-colecao {
+    display: block;
+    margin-top: 12px;
+    text-decoration: none;
+    color: #1e1c18;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 10px 14px;
+    transition: 0.3s;
+}
+
+.btn-colecao:hover {
+    background: #1e1c18;
+    color: white;
+}
 
 .badge-eco {
   position: absolute;
