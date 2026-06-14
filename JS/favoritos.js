@@ -1,26 +1,4 @@
-/* ==========================================================================
-   1. BANCO DE DADOS SIMULADO (Para testes na sua página favoritos.html)
-   ========================================================================== */
-const produtosIniciais = [
-    {
-        id: "prod-01",
-        nome: "The Heritage Wool Cardigan",
-        preco: 345.00,
-        imagem: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=400&auto=format&fit=crop"
-    },
-    {
-        id: "prod-02",
-        nome: "Classic Tailored Blazer",
-        preco: 410.00,
-        imagem: "https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=400&auto=format&fit=crop"
-    },
-    {
-        id: "prod-03",
-        nome: "Leather Oxford Shoes",
-        preco: 280.00,
-        imagem: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=400&auto=format&fit=crop"
-    }
-];
+
 
 if (!localStorage.getItem('favoritos')) {
     localStorage.setItem('favoritos', JSON.stringify(produtosIniciais));
@@ -64,7 +42,7 @@ function carregarFavoritos() {
             <div class="favorite-info">
                 <h3>${produto.nome}</h3>
                 <span class="favorite-price">$${produto.preco.toFixed(2)}</span>
-                <button class="btn-outline btn-add-cart" data-id="${produto.id}">Adicionar à Sacola</button>
+                <button class="btn-outline btn-add-cart" data-id="${produto.id}">Adicionar ao Carrinho</button>
             </div>
         `;
 
