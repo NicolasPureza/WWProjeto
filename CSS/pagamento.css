@@ -251,3 +251,186 @@ nav .active::after {
 .info-box { margin-top: 1rem; border: 1px solid var(--outline-variant); padding: 1rem; font-size: 0.75rem; color: var(--on-surface-variant); display: flex; align-items: flex-start; gap: 0.5rem; position: relative; }
 .info-highlight { font-weight: 700; color: var(--error); }
 .info-icon { position: absolute; right: 1rem; top: 1rem; font-size: 1rem; color: var(--outline-variant); }
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+
+  header {
+    padding: 0 25px;
+  }
+
+  nav {
+    gap: 25px;
+  }
+
+  .checkout-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .cart-summary {
+    order: 3;
+  }
+
+  .payment-wrapper {
+    flex-direction: column;
+  }
+
+  .payment-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--outline-variant);
+  }
+
+  .payment-tab {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .payment-tab.active {
+    border-left: none;
+    border-bottom: 3px solid var(--primary);
+  }
+
+  .payment-content {
+    padding: 1.5rem;
+  }
+}
+
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  /* Header */
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .icones {
+    justify-content: center;
+  }
+
+  /* Main */
+  .checkout-main {
+    padding-top: 30px;
+  }
+
+  .checkout-container {
+    padding: 0 1rem;
+  }
+
+  /* Etapas */
+  .checkout-steps {
+    flex-direction: column;
+  }
+
+  .step {
+    justify-content: flex-start;
+    padding: 15px 20px;
+  }
+
+  /* Sidebar dos pagamentos */
+  .payment-sidebar {
+    width: 100%;
+  }
+
+  .payment-tab {
+    padding: 16px;
+  }
+
+  .payment-content {
+    padding: 1.25rem;
+  }
+
+  /* Formulário */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Cupom */
+  .cupom-box {
+    flex-direction: column;
+  }
+
+  .cupom-box button {
+    width: 100%;
+  }
+
+  /* Pix */
+  .pix-info {
+    padding: 2rem 1rem;
+  }
+
+  .pix-icon {
+    font-size: 2.5rem;
+  }
+
+  /* Resumo */
+  .cart-summary {
+    padding: 1.5rem;
+  }
+
+  .checkout-total-row {
+    margin: 1rem -1.5rem -1.5rem -1.5rem;
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .summary-row {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ================= CELULARES PEQUENOS ================= */
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 20px;
+  }
+
+  nav {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .step {
+    font-size: 12px;
+  }
+
+  .panel-title {
+    font-size: 0.9rem;
+  }
+
+  .input-group input {
+    font-size: 0.9rem;
+  }
+
+  .cart-summary h3 {
+    font-size: 0.85rem;
+  }
+
+  .checkout-total-row {
+    font-size: 0.95rem;
+  }
+
+  .info-box {
+    font-size: 0.7rem;
+  }
+}

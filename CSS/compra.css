@@ -321,4 +321,142 @@ nav .active::after {
   top: 1rem;
   font-size: 1rem;
   color: var(--outline-variant);
+} /* ================= TABLET ================= */
+@media (max-width: 1024px) {
+
+  header {
+    padding: 0 25px;
+  }
+
+  header nav ul {
+    gap: 20px;
+  }
+
+  .checkout-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .user-info-column {
+    text-align: center;
+  }
+
+  .cart-summary {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .checkout-form {
+    max-width: 100%;
+  }
+}
+
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  /* Header */
+  header {
+    padding: 15px;
+    height: auto;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .icones {
+    justify-content: center;
+  }
+
+  /* Conteúdo principal */
+  .checkout-main {
+    padding-top: 30px;
+  }
+
+  .checkout-container {
+    padding: 0 15px;
+  }
+
+  /* Etapas do checkout */
+  .checkout-steps {
+    flex-direction: column;
+  }
+
+  .step {
+    padding: 15px;
+  }
+
+  /* Campos lado a lado viram coluna */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-form {
+    width: 100%;
+  }
+
+  /* Resumo */
+  .cart-summary {
+    padding: 25px;
+  }
+
+  .checkout-total-row {
+    margin: 1rem -25px -25px -25px;
+    padding: 1.5rem;
+  }
+
+  .info-box {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* ================= CELULARES PEQUENOS ================= */
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  header nav ul li a {
+    font-size: 12px;
+  }
+
+  .section-title {
+    font-size: 0.9rem;
+  }
+
+  .checkout-form .input-group input {
+    font-size: 0.95rem;
+  }
+
+  .cart-summary {
+    padding: 20px;
+  }
+
+  .summary-row {
+    font-size: 0.85rem;
+  }
+
+  .checkout-total-row {
+    padding: 1rem;
+  }
+
+  .secure-badge {
+    font-size: 0.75rem;
+  }
 }

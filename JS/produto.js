@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Efeito visual temporário do botão de confirmação
             const textoOriginal = btnAddCart.innerHTML;
-            btnAddCart.innerHTML = `<span>Adicionado ao Guarda-Roupa! ✓</span>`;
+            btnAddCart.innerHTML = `<span>Adicionado ao Carrinho! ✓</span>`;
             btnAddCart.style.backgroundColor = "#2a4d38"; 
 
             setTimeout(() => {
