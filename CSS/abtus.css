@@ -46,10 +46,10 @@ header nav ul {
 }
 
 header nav ul li a {
+  position: relative;
   font-size: 14px;
   color: #5c5a54;
   display: inline-block;
-  transform: scale(1);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -74,12 +74,6 @@ nav {
   gap: 50px;
 }
 
-nav a {
-  text-decoration: none;
-  color: #111;
-  font-size: 1rem;
-  position: relative;
-}
 
 nav a::after {
   content: "";
@@ -183,6 +177,12 @@ nav .active::after {
 .contact-form textarea {
   height: 180px;
   resize: none;
+}
+#mensagem-enviada {
+    margin-top: 15px;
+    color: #5d7a57;
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 .contact-form button {
